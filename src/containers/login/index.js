@@ -72,34 +72,79 @@ class Login extends Component {
       );
     }
     return (
-      <Segment textAlign="center">
-        <Header as="h2">Login</Header>
-        {error}
-        <Form
-          onSubmit={handleSubmit(this.onSubmit.bind(this))}
-          loading={isLoggingIn}
+      <div
+        textAlign="center"
+        style={{
+          position: "absolute",
+          height: "326px",
+          width: "400px",
+          top: "35%",
+          left: "50%",
+          margin: "-100px 0 0 -150px",
+          border: "none",
+          // background: "lavender",
+          fontFamily: "system-ui",
+        }}
+      >
+        <div style={{ paddingLeft: "38px" }}>
+          <h1>Stock Management System</h1>
+        </div>
+        <div
+          style={{
+            width: "300px",
+            position: "absolute",
+            top: "47%",
+            left: "47%",
+            margin: "-100px 0 0 -150px",
+            textAlign: "left",
+            paddingLeft: "14px",
+          }}
         >
-          <Form.Field inline>
-            <Field
-              name="email"
-              placeholder="Enter the Email"
-              component={this.renderField}
-            ></Field>
-          </Form.Field>
-          <Form.Field inline>
-            <Field
-              name="password"
-              type="password"
-              placeholder="Enter the Password"
-              component={this.renderField}
-            ></Field>
-          </Form.Field>
-          <Button loading={submitting} disabled={submitting}>
-            Login
-          </Button>
-        </Form>
-        <a href="/">No account? Register me</a>
-      </Segment>
+          <h2>Login</h2>
+        </div>
+        <Segment
+          style={{
+            width: "300px",
+            position: "absolute",
+            top: "58%",
+            left: "47%",
+            margin: "-100px 0 0 -150px",
+            textAlign: "center",
+            borderRadius: "5px",
+          }}
+        >
+          {/* <Header as="h2">Login</Header> */}
+          {error}
+          <Form
+            onSubmit={handleSubmit(this.onSubmit.bind(this))}
+            loading={isLoggingIn}
+          >
+            <Form.Field inline>
+              <Field
+                name="email"
+                placeholder="Enter the Email"
+                component={this.renderField}
+              ></Field>
+            </Form.Field>
+            <Form.Field inline>
+              <Field
+                name="password"
+                type="password"
+                placeholder="Enter the Password"
+                component={this.renderField}
+              ></Field>
+            </Form.Field>
+            <Button
+              loading={submitting}
+              disabled={submitting}
+              style={{ alignment: "center" }}
+            >
+              Login
+            </Button>
+          </Form>
+          <a href="#/register">No account? Register me</a>
+        </Segment>
+      </div>
     );
   }
 }

@@ -44,7 +44,14 @@ class Register extends Component {
     const hasError = touched && error !== undefined;
     return (
       <div>
-        <Input type="text" error={hasError} fluid {...input} {...custom} />
+        <Input
+          type="text"
+          autoFill="off"
+          error={hasError}
+          fluid
+          {...input}
+          {...custom}
+        />
         {hasError && (
           <Label basic color="red" pointing>
             {error}
@@ -73,48 +80,69 @@ class Register extends Component {
       );
     }
     return (
-      <Segment textAlign="center">
-        <Header as="h2">Register</Header>
-        {error}
-        <Form
-          onSubmit={handleSubmit(this.onSubmit.bind(this))}
-          loading={isLoggingIn}
-        >
-          <Form.Field inline>
-            <Field
-              name="name"
-              placeholder="Enter the name"
-              component={this.renderField}
-            ></Field>
-          </Form.Field>
-          <Form.Field inline>
-            <Field
-              name="email"
-              type="email"
-              placeholder="Enter the email"
-              component={this.renderField}
-            ></Field>
-          </Form.Field>
-          <Form.Field inline>
-            <Field
-              name="password"
-              type="password"
-              placeholder="Enter the password"
-              component={this.renderField}
-            ></Field>
-          </Form.Field>
-          <Form.Field>
-            <Field name="roles" type="roles" component="select">
-              <option value="storeManager">Store Manager</option>
-              {/* <option value="deliveryManager">Delivery Manager</option> */}
-            </Field>
-          </Form.Field>
+      <Segment
+        textAlign="center"
+        style={{
+          position: "absolute",
+          height: "425px",
+          width: "400px",
+          top: "35%",
+          left: "50%",
+          margin: "-100px 0 0 -150px",
+          border: "none",
+          background: "lavender",
+          fontFamily: "system-ui",
+          color: "#282829",
+        }}
+      >
+        <h1>Stock Management System</h1>
 
-          <Button loading={submitting} disabled={submitting}>
-            Register
-          </Button>
-        </Form>
-        <a href="#/login">Have a account? Login me</a>
+        <Segment style={{ background: "aliceblue" }}>
+          <Header as="h2">Register</Header>
+          {error}
+          <Form
+            onSubmit={handleSubmit(this.onSubmit.bind(this))}
+            loading={isLoggingIn}
+            autoFill="off"
+          >
+            <Form.Field inline>
+              <Field
+                name="name"
+                placeholder="Full Name"
+                component={this.renderField}
+              ></Field>
+            </Form.Field>
+            <Form.Field inline autoFill="off">
+              <Field
+                name="email"
+                type="email"
+                placeholder="Email"
+                component={this.renderField}
+                autoFill="off"
+              ></Field>
+            </Form.Field>
+            <Form.Field inline>
+              <Field
+                name="password"
+                type="password"
+                placeholder="Choose Password"
+                component={this.renderField}
+                autoComplete="off"
+              ></Field>
+            </Form.Field>
+            <Form.Field>
+              <Field name="roles" type="roles" component="select">
+                <option value="storeManager">Store Manager</option>
+                <option value="deliveryManager">Delivery Manager</option>
+              </Field>
+            </Form.Field>
+
+            <Button loading={submitting} disabled={submitting}>
+              Register
+            </Button>
+          </Form>
+          <a href="#/login">Have a account? Login me</a>
+        </Segment>
       </Segment>
     );
   }

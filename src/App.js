@@ -47,10 +47,11 @@ class App extends Component {
       return (
         <Provider store={store}>
           <ConnectedRouter history={history}>
-            <div>
+            <div style={{ background: "dodgerblue" }}>
               {/* <Route exact path="/" component={AddInventory} /> */}
               <Route exact path="/login" component={Login} />
-              <Route exact path="/" component={register} />
+              <Route exact path="/" component={Login} />
+              <Route exact path="/register" component={register} />
               <Route exact path="/inventory/add" component={AddInventory} />
               <Route
                 exact
