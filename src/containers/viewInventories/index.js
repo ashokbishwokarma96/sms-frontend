@@ -82,7 +82,7 @@ class AddInventory extends Component {
               <Table.HeaderCell width={1}>Quantity</Table.HeaderCell>
               <Table.HeaderCell>Batch Number</Table.HeaderCell>
               <Table.HeaderCell>Batch Date</Table.HeaderCell>
-              <Table.HeaderCell>Options</Table.HeaderCell>
+              <Table.HeaderCell>Actions</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>{inventoriesView}</Table.Body>
@@ -92,7 +92,7 @@ class AddInventory extends Component {
     return (
       <BaseLayout>
         <Segment textAlign="center">
-          <Header as="h2">Welcome </Header>
+          {/* <Header as="h1">Stock Management System</Header> */}
           <Header as="h2">Inventory List</Header>
 
           {error}

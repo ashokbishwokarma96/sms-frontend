@@ -72,7 +72,7 @@ class Login extends Component {
       );
     }
     return (
-      <div
+      <Segment
         textAlign="center"
         style={{
           position: "absolute",
@@ -82,12 +82,12 @@ class Login extends Component {
           left: "50%",
           margin: "-100px 0 0 -150px",
           border: "none",
-          // background: "lavender",
+          background: "lavender",
           fontFamily: "system-ui",
         }}
       >
-        <div style={{ paddingLeft: "38px" }}>
-          <h1>Stock Management System</h1>
+        <h1>Stock Management System</h1>
+        {/* <div style={{ paddingLeft: "38px" }}>
         </div>
         <div
           style={{
@@ -101,19 +101,20 @@ class Login extends Component {
           }}
         >
           <h2>Login</h2>
-        </div>
+        </div> */}
         <Segment
           style={{
-            width: "300px",
-            position: "absolute",
-            top: "58%",
-            left: "47%",
-            margin: "-100px 0 0 -150px",
-            textAlign: "center",
-            borderRadius: "5px",
+            // width: "300px",
+            // position: "absolute",
+            // top: "58%",
+            // left: "47%",
+            // margin: "-100px 0 0 -150px",
+            // textAlign: "center",
+            // borderRadius: "5px",
+            background: "aliceblue",
           }}
         >
-          {/* <Header as="h2">Login</Header> */}
+          <Header as="h2">Login</Header>
           {error}
           <Form
             onSubmit={handleSubmit(this.onSubmit.bind(this))}
@@ -144,7 +145,7 @@ class Login extends Component {
           </Form>
           <a href="#/register">No account? Register me</a>
         </Segment>
-      </div>
+      </Segment>
     );
   }
 }

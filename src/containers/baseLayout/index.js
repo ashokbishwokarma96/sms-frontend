@@ -52,7 +52,16 @@ class BaseLayout extends Component {
       );
     }
     return (
-      <Container fluid>
+      <Container fluid style={{ background: "aliceblue", color: "black" }}>
+        <h1
+          style={{
+            background: "aliceblue",
+            padding: "10 0 0 25",
+            fontFamily: "system-ui",
+          }}
+        >
+          Stock Management System
+        </h1>
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
@@ -61,7 +70,12 @@ class BaseLayout extends Component {
             visible={true}
             icon="labeled"
             vertical
-            inverted
+            // inverted
+            style={{
+              background: "lavender",
+              textColor: "black",
+              fontFamily: "system-ui",
+            }}
           >
             <Menu.Item onClick={this.handleClick.bind(this, "addInventory")}>
               Add Inventory
@@ -69,7 +83,7 @@ class BaseLayout extends Component {
             <Menu.Item onClick={this.handleClick.bind(this, "viewInventories")}>
               View Inventories
             </Menu.Item>
-            {approveInventoryMenuItem}
+            {/* {approveInventoryMenuItem} */}
             <Menu.Item onClick={this.handleClick.bind(this, "logout")}>
               Logout
             </Menu.Item>

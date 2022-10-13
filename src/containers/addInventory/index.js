@@ -101,10 +101,16 @@ class AddInventory extends Component {
     } else {
       buttonText = "Add Inventory";
     }
+    let titleText = null;
+    if (inventory) {
+      titleText = "Update Inventory";
+    } else {
+      titleText = "Add Inventory";
+    }
     return (
       <BaseLayout>
         <Segment textAlign="center">
-          <Header as="h2">Add Inventory</Header>
+          <Header as="h2">{titleText}</Header>
           {error}
           <Form
             onSubmit={handleSubmit(this.onSubmit.bind(this))}
